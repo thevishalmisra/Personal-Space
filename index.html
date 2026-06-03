@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Space !!</title>
+
+  <!-- This script pulls in Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- These are for the animations and photo gallery -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+  <!-- Google Fonts for the Anime look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Link to your new external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- IMPORTANT: Replace with a real image link after you upload it -->
+  <meta property="og:image" content="https://placehold.co/1200x630/87CEEB/FFFFFF?text=A+Surprise+For+[Name]">
+</head>
+
+<body>
+  <!-- Canvas for the falling cherry blossoms -->
+  <canvas id="sakura-canvas"></canvas>
+
+  <!-- Section 1: Hero Welcome -->
+  <header class="h-screen relative flex items-center justify-center text-white overflow-hidden">
+    <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+      <source src="img/sa.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <div class="text-center z-10 p-4" data-aos="fade-in" data-aos-duration="1500">
+      <h1 class="text-5xl md:text-7xl font-anime drop-shadow-lg">Hey Sreyashi !!</h1>
+      <p class="mt-4 text-xl font-semibold">A small corner of the internet made just for you, filled with memories,
+        feelings, and all the words my heart never stopped wanting to say ❤️
+      </p>
+      <!-- Interactive Love Capsule -->
+      <div class="mt-6 flex flex-col items-center justify-center">
+        <!-- Floating quote container -->
+        <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-full border border-white/20 shadow-lg text-lg md:text-xl font-semibold max-w-lg min-h-[4rem] flex items-center justify-center transition-all duration-300">
+          <p id="love-quote" class="text-white drop-shadow-md">Loading a sweet message for you... ✨</p>
+        </div>
+        
+        <!-- Interactive Heart Button -->
+        <button id="heart-capsule-btn" class="mt-4 bg-pink-500 hover:bg-pink-600 active:scale-95 text-white font-anime font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 border-2 border-white/50 group">
+          <span class="animate-pulse">❤️</span>
+          <span>Click for a Love Note</span>
+          <span class="group-hover:translate-x-1 transition-transform">👉</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6 md:p-12">
+
+    <!-- Section 2: A Letter For You -->
+    <section class="my-16 md:my-24 max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-anime text-sakura mb-8 drop-shadow-sm">A Special Message For You</h2>
+      <div class="text-left text-lg leading-relaxed space-y-4 bg-white p-8 rounded-lg shadow-lg">
+        <!-- TODO: Write your personal letter here -->
+        <p>Hey Doda,</p>
+        <p>If there is one thing I want you to know, it's that you were never just another person in my life.
+          You became a part of my thoughts, my memories, my prayers, and even my plans for the future. </p>
+        <p>I know I made mistakes. I know there were moments when I failed to understand you the way I should have.
+          There are things I wish I could go back and change, conversations I wish I had handled differently, and
+          moments I wish I had valued even more.</p>
+
+        <p>But through everything, one thing never changed—my feelings for you. Time passed, situations changed, and
+          distance grew, yet there hasn't been a single day when you completely left my mind.</p>
+        <p>This website is not just a collection of pictures and words. It's a small reflection of everything I never
+          stopped feeling. Every memory here reminds me of how special you are to me and how much you have shaped my
+          life.</p>
+
+        <p>I Just want one chance and one hope to live with you to love you to walk with you and to breath with you till
+          the
+          end of life.....❤️</p>
+        <p class="text-right mt-8">
+          ~ Vishal <br>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: The Timeline -->
+    <section class="my-16 md:my-24">
+      <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Your Story Arc ❤️</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Timeline Item 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between text-center" data-aos="fade-up"
+          data-aos-delay="100">
+          <div>
+            <div
+              class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-lg overflow-hidden border-4 border-white shadow-md mb-4">
+              <img src="gallery/photo_6_2026-06-03_10-06-46.jpg" alt="Add photo 1"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <h3 class="text-2xl font-anime text-sakura">Every sunset feels prettier when I imagine it through your eyes
+              🌅❤️</h3>
+            <p class="mt-2 text-lg"></p>
+          </div>
+        </div>
+        <!-- Timeline Item 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between text-center" data-aos="fade-up"
+          data-aos-delay="200">
+          <div>
+            <div
+              class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-lg overflow-hidden border-4 border-white shadow-md mb-4">
+              <img src="gallery/photo_15_2026-06-03_10-37-56.jpg" alt="Add photo 2"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <h3 class="text-2xl font-anime text-sakura">Not my favorite picture of you.. because every picture of you
+              becomes my favorite 💙</h3>
+            <p class="mt-2 text-lg"></p>
+          </div>
+        </div>
+        <!-- Timeline Item 3 (NEW) -->
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between text-center" data-aos="fade-up"
+          data-aos-delay="300">
+          <div>
+            <div
+              class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-lg overflow-hidden border-4 border-white shadow-md mb-4">
+              <img src="gallery/photo_8_2026-06-03_10-37-56.jpg" alt="Add photo 3"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <h3 class="text-2xl font-anime text-sakura">While you're watching the sunset, I'm busy admiring the view
+              sitting right in front of it. ✨</h3>
+            <p class="mt-2 text-lg"></p>
+          </div>
+        </div>
+        <!-- Timeline Item 4 (NEW) -->
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between text-center" data-aos="fade-up"
+          data-aos-delay="400">
+          <div>
+            <div
+              class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-lg overflow-hidden border-4 border-white shadow-md mb-4">
+              <img src="gallery/photo_14_2026-06-03_10-37-56.jpg" alt="Add photo4"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <h3 class="text-2xl font-anime text-sakura">Some people chase perfection, I was lucky enough to find it. 🦋
+            </h3>
+            <p class="mt-2 text-lg"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Your Favourite Photos of your loved Ones (NEW SECTION) -->
+    <section class="my-16 md:my-24">
+      <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Hall of Fame</h2>
+      <div class="relative">
+        <!-- Scroll Buttons -->
+        <button id="scroll-left-btn"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-opacity opacity-0 md:opacity-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sakura" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="scroll-right-btn"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-opacity opacity-0 md:opacity-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sakura" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Scrollable Container -->
+        <div id="hall-of-fame-scroller"
+          class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide p-4 -mx-4">
+          <div class="flex snap-x snap-mandatory gap-8">
+            <!--  Card 1 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="100">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_16_2026-06-03_10-37-56.jpg" alt="Photo 1"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 1</h3>
+                </div>
+                <p class="mt-2">Standing beside greatness, yet somehow you still steal the whole view. </p>
+              </div>
+            </div>
+            <!--  Card 2 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_13_2026-06-03_10-37-56.jpg" alt="Photo 2"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 2</h3>
+                </div>
+                <p class="mt-2">A masterpiece admiring another masterpiece. </p>
+              </div>
+            </div>
+            <!--  Card 3 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="300">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_15_2026-06-03_10-37-56.jpg" alt="Photo 3"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 3</h3>
+                </div>
+                <p class="mt-2">That smile has been my favorite distraction for years.</p>
+              </div>
+            </div>
+            <!--  Card 4 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="400">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_17_2026-06-03_10-37-56.jpg" alt="Photo 4"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 4</h3>
+                </div>
+                <p class="mt-2">Even the sunset waits for its turn when you're around.</p>
+              </div>
+            </div>
+            <!--  Card 5 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="500">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_10_2026-06-03_10-06-46.jpg" alt="Photo 5"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 5</h3>
+                </div>
+                <p class="mt-2">Some pictures capture beauty; this one captures magic.</p>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up"
+              data-aos-delay="600">
+              <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full flex flex-col justify-between">
+                <div>
+                  <div
+                    class="w-full h-80 flex items-center justify-center bg-pink-50/50 rounded-md overflow-hidden mb-4">
+                    <img src="gallery/photo_9_2026-06-03_10-37-56.jpg" alt="Photo 6"
+                      class="max-w-full max-h-full object-contain">
+                  </div>
+                  <h3 class="text-2xl font-anime text-sakura">Photo 6</h3>
+                </div>
+                <p class="mt-2">If elegance had a face, I'd be looking at it right now. 🤍</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: The Gallery -->
+    <section class="my-16 md:my-24">
+      <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">The Sreyashi's Collection</h2>
+      <p class="text-center text-lg -mt-8 mb-12">(Your Very-own Gallery)</p>
+      <div id="lightgallery" class="columns-2 md:columns-4 gap-4 space-y-4">
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_12_2026-06-03_10-06-46.jpg" data-aos="zoom-in" class="block w-full">
+            <img src="gallery/photo_12_2026-06-03_10-06-46.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 1">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_2_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="100"
+            class="block w-full">
+            <img src="gallery/photo_2_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 2">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_3_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="200"
+            class="block w-full">
+            <img src="gallery/photo_3_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 3">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_4_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="300"
+            class="block w-full">
+            <img src="gallery/photo_4_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 4">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_9_2026-06-03_10-06-46.jpg" data-aos="zoom-in" data-aos-delay="400"
+            class="block w-full">
+            <img src="gallery/photo_9_2026-06-03_10-06-46.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 5">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_6_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="500"
+            class="block w-full">
+            <img src="gallery/photo_6_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 6">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_7_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="600"
+            class="block w-full">
+            <img src="gallery/photo_7_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 7">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_8_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="700"
+            class="block w-full">
+            <img src="gallery/photo_8_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 8">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_9_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="800"
+            class="block w-full">
+            <img src="gallery/photo_9_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 9">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_10_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="900"
+            class="block w-full">
+            <img src="gallery/photo_10_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 10">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_11_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="1000"
+            class="block w-full">
+            <img src="gallery/photo_11_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 11">
+          </a>
+        </div>
+        <div class="break-inside-avoid mb-4">
+          <a href="gallery/photo_12_2026-06-03_10-37-56.jpg" data-aos="zoom-in" data-aos-delay="1100"
+            class="block w-full">
+            <img src="gallery/photo_12_2026-06-03_10-37-56.jpg"
+              class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-auto border-4 border-white"
+              alt="Memory 12">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Finale -->
+    <section class="my-16 md:my-24" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-anime text-center mb-4"> You are always been the most beautiful and
+        important part of my life. ❤️
+
+      </h2>
+      <div class="max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden bg-navy">
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white p-8 text-center">
+    <p>Can i get an chance please ?..... 🥹</p>
+    </p>
+    <p class="text-sm opacity-70 mt-2">Made by Your's Vishal (dodi) </p>
+  </footer>
+
+  <!-- These scripts are for the animations and photo gallery -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
+  <!-- Link to your new external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+
+</html>
