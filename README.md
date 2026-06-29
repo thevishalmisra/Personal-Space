@@ -2,10 +2,6 @@
 
 A beautiful and interactive personal memory website built to celebrate someone special. This project lets you create a personalized experience by combining photos, videos, heartfelt messages, memorable moments, and background music into a single responsive webpage.
 
-## 🌐 Live Demo
-
-**Live:** https://your-project-link.vercel.app
-
 ## ✨ Features
 
 * 🎬 Hero section with personalized image/video
