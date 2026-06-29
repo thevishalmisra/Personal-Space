@@ -8,7 +8,6 @@ A beautiful and interactive personal memory website built to celebrate someone s
 * 💖 Custom welcome message
 * 📖 Story & memorable moments section
 * 🖼️ Responsive photo gallery
-* 🎵 Background music support
 * 📱 Fully responsive design
 * ⚡ Smooth scrolling and animations
 * 🎨 Easy to customize
